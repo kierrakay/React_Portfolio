@@ -1,3 +1,5 @@
+//can be a route
+
 import React from 'react'
 
 class Projects extends React.Component {
