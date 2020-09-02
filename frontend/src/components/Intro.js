@@ -17,7 +17,7 @@ export default class Intro extends Component {
                 <li><a href="/" >About</a></li>
                 <li><a href="/" >Projects</a></li>
                 <li><a href="/" >Blog</a></li>
-                <li><a href="/" >Work Experience</a></li>
+                <li><a href="/" >Timeline</a></li>
               </ul>
             </div>
           </nav>
