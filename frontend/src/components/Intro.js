@@ -6,7 +6,7 @@ export default class Intro extends Component {
     return (
       <div>
       <div>
-          <div className="#">
+          <div className="sidebar">
             <h1>Kierra Merriman</h1>
             <span className="email">k.merriman32@hotmail.com</span>
           </div>
