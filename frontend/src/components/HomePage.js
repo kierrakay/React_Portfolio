@@ -1,4 +1,5 @@
 import React from 'react'
+import About from './About'
 
 
 
@@ -14,6 +15,9 @@ import React from 'react'
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="/blogs">Blogs</a></li> */}
             {/* </div> */}
+            <div>
+            <About />
+            </div>
         </div>
     )
   }

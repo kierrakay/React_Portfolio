@@ -14,8 +14,8 @@ import HomePage from './components/HomePage'
 function App() {
   return (
     <div>
-      <Route exact path="/" component={HomePage} />
       <NavBar />
+      <Route exact path="/" component={HomePage} />
       <Route exact path="/blogs" component={BlogsContainer} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/projects" component={Projects} />
