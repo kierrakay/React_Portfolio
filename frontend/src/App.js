@@ -20,7 +20,7 @@ function App() {
       <div style={{height: '800px', position: 'relative'}}>
     <Layout fixedDrawer>
         <Drawer title="Kierra Merriman">
-          <div className="drawer-title-email">K.merriman32@hotmail.com</div>
+          <div className="drawer-title-email">k.merriman32@email.com</div>
             <Navigation>
                 <Link  to="/">Home</Link>
                 <Link to="/blogs">Blogs</Link>
@@ -29,7 +29,7 @@ function App() {
                 <Link to="/resume">Resume</Link>
             </Navigation>
         </Drawer>
-        <Content>
+        <Content className="navigation-color">
           <NavBar />
           </Content>
     </Layout>
