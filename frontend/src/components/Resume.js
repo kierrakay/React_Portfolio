@@ -12,3 +12,5 @@ class Resume extends React.Component {
 }
 
 export default Resume
+
+//add a googledocs download link
