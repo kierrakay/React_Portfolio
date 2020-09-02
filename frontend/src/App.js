@@ -6,6 +6,7 @@ import Contact from './components/Contact'
 import NavBar from './components/Main'
 import Projects from './components/Projects'
 import Resume from './components/Resume'
+import HomePage from './components/HomePage'
 // import Intro from './components/Intro'
 // import About from './components/About'
 // import Timeline from './components/Timeline';
@@ -13,6 +14,7 @@ import Resume from './components/Resume'
 function App() {
   return (
     <div>
+      <Route exact path="/" component={HomePage} />
       <NavBar />
       <Route exact path="/blogs" component={BlogsContainer} />
       <Route exact path="/contact" component={Contact} />

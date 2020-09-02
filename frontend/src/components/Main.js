@@ -6,6 +6,8 @@ const NavBar = () => {
       <nav className="navbar">
         <div className="container">
           <a className="navbar-brand" href="/">Kierra Merriman</a>
+          <br/>
+          <a className="navbar-brand-email" href="/">K.merriman32@hotmail.com</a>
           <div className="#" id="navbarDefault" >
             <ul className="navbar-nav">
               <li className='nav-item'>
