@@ -1,9 +1,9 @@
 import React from 'react';
 // import { Route } from 'react-router-dom';
-import './App.css';
 import { Layout, Drawer, Navigation, Content} from 'react-mdl'
 import NavBar from './components/Main'
 import { Link } from 'react-router-dom'
+import SocialLinks from './components/SocialLinks'
 
 // import BlogsContainer from './containers/BlogsContainer'
 // import Contact from './components/Contact'
@@ -28,6 +28,7 @@ function App() {
                 <Link to="/projects">Projects</Link>
                 <Link to="/resume">Resume</Link>
             </Navigation>
+           <SocialLinks />
         </Drawer>
         <Content className="navigation-color">
           <NavBar />
@@ -38,12 +39,3 @@ function App() {
 }
 
 export default App;
-
-/* <div>
-<NavBar />
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/blogs" component={BlogsContainer} />
-      <Route exact path="/contact" component={Contact} />
-      <Route exact path="/projects" component={Projects} />
-      <Route exact path="/resume" component={Resume} />
-    </div>  */

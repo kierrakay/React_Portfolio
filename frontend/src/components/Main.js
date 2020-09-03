@@ -8,12 +8,14 @@ import Projects from './Projects'
 import Resume from './Resume'
 
 const NavBar = () => (
+
     <Switch>
         <Route exact path="/" component={HomePage} />
         <Route  path="/blogs" component={BlogsContainer} />
         <Route  path="/contact" component={Contact} />
         <Route  path="/projects" component={Projects} />
         <Route  path="/resume" component={Resume} />
+        <li> hey</li>
     </Switch>
 )
 

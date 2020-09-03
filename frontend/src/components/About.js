@@ -25,7 +25,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div>
+    <div className='about-section'>
         <h1> About Section</h1>
             <h5> Who Am I?</h5>
                 <h3> shgciysgc shgdciah dhdaydchb.</h3>
