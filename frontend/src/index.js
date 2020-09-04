@@ -6,14 +6,21 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './index.css';
+import manageBlog from './reducers/manageBlog'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+let store = createStore(manageBlog)
 
 ReactDOM.render(
+  <Provider store={store}>
   <Router>
  
   {/* <React.StrictMode> */}
   <App />
   {/* </React.StrictMode> */}
   </Router>
+  </Provider>
 ,
   document.getElementById('root')
 );
