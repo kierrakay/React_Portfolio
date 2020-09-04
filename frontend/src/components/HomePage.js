@@ -7,13 +7,14 @@ import { Grid, Cell } from 'react-mdl'
  class HomePage extends React.Component {
   render() {
     return (
-            <div style={{width: '100%', margin: 'auto'}}>
+            // <div style={{width: '100%', margin: 'auto'}}>
+        <div>
           <Grid className="landing-grid">
             <Cell col={12}>
             <div className="banner-text">
               {/* <h1>Software Engineer</h1> */}
 
-              <hr/>
+              {/* <hr/> */}
               <About />
             </div>
             <div>

@@ -6,7 +6,7 @@ import React from 'react'
             return (
                 <div >
               
-                    <h1>Blogs Component </h1>
+                    <h1>Blogs Component. </h1>
                 </div>
             )
         }
