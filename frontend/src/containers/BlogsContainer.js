@@ -34,7 +34,8 @@ class BlogsContainer extends React.Component {
                 <BlogInput />
                 {/* <BlogInput blogPosts={this.props.blogPosts}/> */}
                 {/* {this.renderBlogs()} */}
-                <Blogs />
+                {/* <Blogs blogPosts={this.props.blogPosts}/> */}
+                <Blogs blogPosts={this.props.blogPosts} />
             </div>
         )
     }
