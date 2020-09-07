@@ -6,24 +6,25 @@ class Api::V1::BlogPostsController < ApplicationController
     end
 
     def create 
-        blog_posts = BlogPost.create(blog_posts_params)
-        blog_posts.save!
-        render json: blog_posts
+        # binding.pry
+        blog_post = BlogPost.create(blog_post_params)
+        blog_post.save!
+        render json: blog_post
     end
 
     def show 
-        blog_posts = BlogPost.find(params[:id])
-        render json: blog_posts
+        blog_post = BlogPost.find(params[:id])
+        render json: blog_post
     end
 
     def destroy 
-        blog_posts = BlogPost.find_by(:id => params[:id]).destroy
-        render json: blog_posts
+        blog_post = BlogPost.find_by(:id => params[:id]).destroy
+        render json: blog_post
     end
 
     private
 
-    def blog_posts_params
-        params.require(:blog_posts).permit(:title, :content)
+    def blog_post_params
+        params.require(:blog_post).permit(:title, :content)
     end
 end

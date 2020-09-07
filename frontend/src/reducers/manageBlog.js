@@ -6,6 +6,8 @@ export default function blogReducer(state = {
         switch (action.type){
             case 'FETCH_BLOGS':
             return {blogPosts: action.payload}
+            case 'ADD_BLOG':
+            return {...state, blogPosts: [...state.blogPosts, action.payload]}
             default: 
             return state 
 

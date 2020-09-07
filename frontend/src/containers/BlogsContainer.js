@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import BlogInput from '../components/blogs/BlogInput'
-import { fetchBlogPosts} from '../actions/blogActions'
+import { fetchBlogPosts} from '../actions/fetchBlogs'
+// import { addBlog } from '../actions/addBlog'
 import Blogs from '../components/blogs/Blogs'
-// import Blog from '../components/blogs/Blog'
+
 
 class BlogsContainer extends React.Component {
 
@@ -29,12 +30,13 @@ class BlogsContainer extends React.Component {
     // renderBlogs = () => this.props.blogs.map((blog,id) => <Blog key={id} title={blog.title} content={blog.content}/>)
 
     render() {
+        // const {fetchBlogPosts, addBlog} = this.props
         return (
             <div>
                 <BlogInput />
-                {/* <BlogInput blogPosts={this.props.blogPosts}/> */}
+                                {/* <BlogInput fetchBlogPosts={fetchBlogPosts} addBlog={addBlog}/> */}
+                                {/* ^^good for adding props from mapDispatchToProps below */}
                 {/* {this.renderBlogs()} */}
-                {/* <Blogs blogPosts={this.props.blogPosts}/> */}
                 <Blogs blogPosts={this.props.blogPosts} />
             </div>
         )
@@ -48,8 +50,14 @@ const mapStateToProps = state => {
     }
 }
 
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         fetchBlogPosts: () => dispatch(fetchBlogPosts()),
+//         addBlog: () => dispatch(addBlog()),
+//     }
+// }
 
 
 export default connect(mapStateToProps, {fetchBlogPosts})(BlogsContainer)
-// export default connect(null, {fetchBlogPosts})(BlogsContainer) <-- works
-// export default connect(null, mapDispatchToProps)(BlogsContainer)
+
+// export default connect(mapStateToProps, mapDispatchToProps)(BlogsContainer)

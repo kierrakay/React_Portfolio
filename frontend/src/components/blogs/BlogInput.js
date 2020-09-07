@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addBlog } from '../../actions/addBlog'
+
 
     class BlogInput extends React.Component {
             state = {
@@ -18,12 +20,12 @@ import { connect } from 'react-redux'
 
         handleSubmit = event => {
             event.preventDefault()
-            // this.props.blogPosts(this.state)
             this.props.addBlog(this.state)
             this.setState({
                 title: '',
                 content: '',
             })
+            // console.log('after submit',event)...console mentiosn synthetic event was is that?
         }
         render () {
             return (
@@ -40,8 +42,8 @@ import { connect } from 'react-redux'
         }
     }
 
-    const mapDispatchToProps = dispatch => ({
-        addBlog: formData => dispatch ({ type: 'ADD_BLOG', payload: formData })
-    })
 
-export default connect(null, mapDispatchToProps)(BlogInput)
+
+    // export default connect()(BlogInput)
+
+export default connect(null, { addBlog })(BlogInput)
