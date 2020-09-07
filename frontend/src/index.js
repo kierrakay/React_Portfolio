@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import './index.css';
-import manageBlog from './reducers/manageBlog'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose} from 'redux'
+import thunk from 'redux-thunk';
+import blogReducer from './reducers/manageBlog'
+import App from './App';
 
-let store = createStore(manageBlog)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(blogReducer, composeEnhancers(applyMiddleware(thunk)))
+// const store = createStore(blogReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 
 ReactDOM.render(
   <Provider store={store}>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
     class BlogInput extends React.Component {
             state = {
                 title: '',
-                content: '',
+                content: ''
             }
     
 
@@ -17,7 +17,8 @@ import { connect } from 'react-redux'
         }
 
         handleSubmit = event => {
-            event.preventDefault ()
+            event.preventDefault()
+            // this.props.blogPosts(this.state)
             this.props.addBlog(this.state)
             this.setState({
                 title: '',
@@ -30,7 +31,7 @@ import { connect } from 'react-redux'
                     <form onSubmit={this.handleSubmit}>
                         <label>add blog:</label>
                         <input type="title" placeholder="title" name="title" onChange={this.handleChange} value={this.state.title}/>
-                        <input type="component" placeholder="content" name="content" onChange={this.handleChange} value={this.state.content}/>
+                        <input type="content" placeholder="content" name="content" onChange={this.handleChange} value={this.state.content}/>
                         <input type="submit" />
                     </form>
                    

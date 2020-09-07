@@ -11,6 +11,11 @@ class Api::V1::BlogPostsController < ApplicationController
         render json: blog_posts
     end
 
+    def show 
+        blog_posts = BlogPost.find(params[:id])
+        render json: blog_posts
+    end
+
     def destroy 
         blog_posts = BlogPost.find_by(:id => params[:id]).destroy
         render json: blog_posts
