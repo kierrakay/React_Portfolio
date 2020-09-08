@@ -1,15 +1,14 @@
 import React from 'react'
 import Blog from './Blog'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+
 
 const Blogs = (props) => {
-
+console.log(props)
     return (
         <div>
-            {props.blogPosts.map(blogPost =>
-                <li key={blogPost.id}>
-                    <Link to={`/blogs/${blogPost.id}`}>{blogPost.title}</Link>
-                </li>
+            {props.blogPosts.map( (blogPost,id) =>
+                <Blog key={id}blogPost={blogPost}/>
             )}
         </div>
     )
