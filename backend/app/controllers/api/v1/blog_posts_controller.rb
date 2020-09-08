@@ -13,6 +13,7 @@ class Api::V1::BlogPostsController < ApplicationController
     end
 
     def show 
+       
         blog_post = BlogPost.find(params[:id])
         render json: blog_post
     end

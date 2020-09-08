@@ -31,8 +31,8 @@ class App extends React.Component {
   return (
       <div style={{height: '800px', position: 'relative'}}>
     <Layout fixedDrawer>
-        <Drawer title="Kierra Merriman">
-          <div className="drawer-title-email">k.merriman32@email.com</div>
+        <Drawer title="Maddison">
+          <div className="drawer-title-email">maddison@email.com</div>
             <Navigation>
                 <Link  to="/">Home</Link>
                 <Link to="/blogs">Blogs</Link>

@@ -15,7 +15,6 @@ const NavBar = () => (
         <Route  path="/contact" component={Contact} />
         <Route  path="/projects" component={Projects} />
         <Route  path="/resume" component={Resume} />
-        <li> hey</li>
     </Switch>
 )
 

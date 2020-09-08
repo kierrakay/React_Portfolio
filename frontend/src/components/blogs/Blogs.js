@@ -1,36 +1,22 @@
 import React from 'react'
+import Blog from './Blog'
+import { Link } from 'react-router-dom'
 
 const Blogs = (props) => {
-    // const Blogs = ({blogPosts, secondprop}) => {
-    console.log('blogscomponent', props)
-    // console.log('blogscomponent', secondprop)
-return (
-    <div>
-        {props.blogPosts.map(blogPost => <li key={blogPost.id}>{blogPost.title} - {blogPost.content}</li>)}
-         {/* blogPosts */}
-    </div>
-)
+
+    return (
+        <div>
+            {props.blogPosts.map(blogPost =>
+                <li key={blogPost.id}>
+                    <Link to={`/blogs/${blogPost.id}`}>{blogPost.title}</Link>
+                </li>
+            )}
+        </div>
+    )
 
 }
 
 export default Blogs
 
 
-
-
-
-// import React from 'react'
-
-// class Blogs extends React.Component {
-   
-//     render () {
-//         return (
-//             <div >
-          
-//                 <h1>Blogs Component. </h1>
-//             </div>
-//         )
-//     }
-// }
-
-// export default Blogs
+//  <div key={blogPost.id}><Blog blogPost={blogPost}/></div> 
