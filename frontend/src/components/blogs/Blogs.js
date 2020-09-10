@@ -8,7 +8,7 @@ import { Grid, Cell, Card, CardTitle, CardActions, Button, CardMenu, CardText} f
 
 const Blogs = (props) => {
    
-    
+    console.log(props)
         return (
     
             <div className="blogs-grid" >

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// import { addComment } from '../../actions/addBlog'
+import { addComment } from '../../actions/addComment'
+
 
 
     class CommentInput extends React.Component {
@@ -20,12 +21,13 @@ import { connect } from 'react-redux'
 
         handleSubmit = event => {
             event.preventDefault()
-            this.props.addBlog(this.state)
+            // this.props.addComment(this.state, blogPost)
+            this.props.addComment(this.state, this.props.blogPost.id)
             this.setState({
                 name: '',
                 content: '',
             })
-            alert("Comment subbmitted!")
+            alert("Comment submitted!")
             // console.log('after submit',event)...console mentiosn synthetic event was is that?
         }
         render () {
@@ -46,7 +48,7 @@ import { connect } from 'react-redux'
 
 
 
-export default connect()(CommentInput)
+export default connect(null, {addComment})(CommentInput)
 
 
 //name and value in form make it a controlled form using local state

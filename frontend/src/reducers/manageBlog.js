@@ -5,9 +5,18 @@ export default function blogReducer(state = {
     action) {
         switch (action.type){
             case 'FETCH_BLOGS':
-            return {blogPosts: action.payload}
+                return {blogPosts: action.payload}
             case 'ADD_BLOG':
-            return {...state, blogPosts: [...state.blogPosts, action.payload]}
+                return {...state, blogPosts: [...state.blogPosts, action.payload]}
+            case 'ADD_COMMENT':
+                let blogPosts = state.blogPosts.map(blogPost => {
+                    if(blogPost.id === action.payload.id) {
+                        return action.payload
+                    } else {
+                        return blogPost
+                    }
+                })
+                return {...state, blogPosts: blogPosts}
             default: 
             return state 
 
