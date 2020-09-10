@@ -47,3 +47,6 @@ import { connect } from 'react-redux'
 
 
 export default connect()(CommentInput)
+
+
+//name and value in form make it a controlled form using local state

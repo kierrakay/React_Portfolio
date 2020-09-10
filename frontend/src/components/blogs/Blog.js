@@ -7,16 +7,16 @@ import CommentsContainer from '../../containers/CommentsContainer'
 //functional presentational component
 const Blog = (props) => {
     //this is preferable just incase your backend id doesnt match the array idx (redux). in the case that you delete blogs.
-let blog = props.blogPosts[props.match.params.id - 1]
+let blogPost = props.blogPosts[props.match.params.id - 1]
 
 // console.log(blog)
 
     return (
         <div>
-             <h1>Title: {blog ? blog.title: null}</h1> - <h1>Content: {blog ? blog.content : null}</h1>
+             <h1>Title: {blogPost ? blogPost.title: null}</h1> <h1>Content: {blogPost ? blogPost.content : null}</h1>
    
              <div>
-                 <CommentsContainer blog={blog}/>
+                 <CommentsContainer blogPost={blogPost}/>
              </div>
         </div>
 
