@@ -6,8 +6,11 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 //functional presentational component
 const Blog = (props) => {
+    //this is preferable just incase your backend id doesnt match the array idx (redux). in the case that you delete blogs.
 let blog = props.blogPosts[props.match.params.id - 1]
- console.log(props)
+
+// console.log(blog)
+
     return (
         <div>
              <h1>Title: {blog ? blog.title: null}</h1> - <h1>Content: {blog ? blog.content : null}</h1>
@@ -103,3 +106,7 @@ export default Blog
 
 
 
+
+
+//this way below could have a redux idx of 3 but an id of 5 in the backend so the id in url would not match
+// let blog = props.blogPosts.filter(blog => blog.id === props.match.params.id)[0]
