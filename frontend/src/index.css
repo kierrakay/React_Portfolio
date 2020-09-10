@@ -31,14 +31,29 @@ background: linear-gradient(to left, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Fi
 
 .projects-grid {
   display: flex;
-  /* grid-template-columns: 100px 50px 100px;
-  grid-template-rows: 80px auto 80px; 
-  column-gap: 10px;
-  row-gap: 15px; */
 }
-/* .blogs-grid {
-  display: flex;
+
+.blogs-grid {
+  display: grid;
+  margin-left: 8px;
+  margin-right: auto;
+  width: 50%;
+  grid-template-columns: max-content max-content max-content;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+  /* justify-items: center; */
+  /* grid-template-rows: 20px auto 10px; */
+  /* grid-template-columns: minmax(200px, 3fr) 9fr; */
+
+}
+
+/* .grid-item {
+  justify-self: center;
+  align-self: center;
 } */
+
 
 /* .banner-text {
   background-color: black;

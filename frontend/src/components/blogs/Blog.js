@@ -4,7 +4,6 @@ import { Grid, Cell, Card, CardTitle, CardActions, Button, CardMenu, CardText} f
 
 
 
-
 //functional presentational component
 const Blog = (props) => {
 let blog = props.blogPosts[props.match.params.id - 1]

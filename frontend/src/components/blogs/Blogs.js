@@ -6,44 +6,24 @@ import { Grid, Cell, Card, CardTitle, CardActions, Button, CardMenu, CardText} f
 
 
 
-// const Blogs = (props) => {
-// console.log(props)
-//     return (
-//         <div>
-//         {props.blogPosts.map(blogPost =>
-//             <li key={blogPost.id}>
-//                 <Link to={`/blogs/${blogPost.id}`}>{blogPost.title}</Link>
-//         </li> )}
-//         </div>
-//     )
-
-// }
-
-// export default Blogs
-
-
-
-
-
 const Blogs = (props) => {
    
     
         return (
     
-            <div className="projects-grid" >
+            <div className="blogs-grid" >
                 {props.blogPosts.map(blogPost =>
             <Grid key={blogPost.id}>
             <Cell col={12}>
             <Card shadow={5} style={{minWidth: '450', margin: 'auto'}} >
             <CardTitle style={{color: 'black', height: '176px', background: '#'}}>  {blogPost.title}</CardTitle>
-               {/* <CardTitle style={{color: 'black', height: '176px', background: '#'}}>{props.blogPost.title}</CardTitle> */}
                     <CardText>
                         {blogPost.content}
     
                     </CardText>
                     <CardActions border>
                     <Button colored>
-                        <Link to={`/blogs/${blogPost.id}`}>see blog</Link>
+                        <Link to={`/blogs/${blogPost.id}`}>Comment Here</Link>
                         </Button>
                     </CardActions>
                     <CardMenu style={{color: '#fff'}}>
@@ -85,7 +65,7 @@ const Blogs = (props) => {
 
 
 
-
+//part 1
 // const Blogs = (props) => {
 //     console.log(props)
 //         return (
@@ -101,6 +81,22 @@ const Blogs = (props) => {
     
 //     export default Blogs
 
+
+//part 2
+// const Blogs = (props) => {
+// console.log(props)
+//     return (
+//         <div>
+//         {props.blogPosts.map(blogPost =>
+//             <li key={blogPost.id}>
+//                 <Link to={`/blogs/${blogPost.id}`}>{blogPost.title}</Link>
+//         </li> )}
+//         </div>
+//     )
+
+// }
+
+// export default Blogs
 
 
 
