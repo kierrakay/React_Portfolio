@@ -1,20 +1,20 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-
 import BlogsContainer from '../containers/BlogsContainer'
 import Contact from './Contact'
 import HomePage from './HomePage'
 import Projects from './Projects'
-import Resume from './Resume'
+import BlogInput from '../components/blogs/BlogInput'
+
 
 const NavBar = () => (
 
     <Switch>
         <Route exact path="/" component={HomePage} />
         <Route  path="/blogs" component={BlogsContainer} />
+        <Route  path='/blogs/new' component={BlogInput} />
         <Route  path="/contact" component={Contact} />
         <Route  path="/projects" component={Projects} />
-        <Route  path="/resume" component={Resume} />
     </Switch>
 )
 

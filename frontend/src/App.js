@@ -36,9 +36,10 @@ class App extends React.Component {
             <Navigation>
                 <Link  to="/">Home</Link>
                 <Link to="/blogs">Blogs</Link>
+                <Link to="/blogs/new">Create A New Blog</Link>
                 <Link to="/contact">Contact</Link>
                 <Link to="/projects">Projects</Link>
-                <Link to="/resume">Resume</Link>
+                <a href ="https://docs.google.com/document/d/1Qpqf8Y59bvjgFXIg_aIVLGfBCjuQiQydcOusV7BP4NA/edit?usp=sharing">Resume</a>
             </Navigation>
            <SocialLinks />
         </Drawer>
