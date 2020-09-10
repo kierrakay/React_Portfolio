@@ -10,6 +10,7 @@ class Api::V1::BlogPostsController < ApplicationController
         blog_post = BlogPost.create(blog_post_params)
         blog_post.save!
         render json: blog_post
+        # render json: blog_post, notice: 'Blog was successfully created.'
     end
 
     def show 
@@ -26,6 +27,6 @@ class Api::V1::BlogPostsController < ApplicationController
     private
 
     def blog_post_params
-        params.require(:blog_post).permit(:title, :content)
+        params.require(:blog_post).permit(:title, :content, :url)
     end
 end

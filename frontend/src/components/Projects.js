@@ -20,9 +20,9 @@ class Projects extends React.Component {
                    That's mint, well done please submit the sop and uat files by next monday, critical mass, and going forward, so going forward. Strategic high-level 30,000 ft view pass the mayo, appeal to the client, sue the vice president and can you put it on my calendar?.
                    </CardText>
                    <CardActions border>
-                       <Button colored>Github</Button>
-                       <Button colored>CodePen</Button>
-                       <Button colored>LiveDemo</Button>
+                       <Button colored ripple>Github</Button>
+                       <Button colored ripple>CodePen</Button>
+                       <Button colored ripple>LiveDemo</Button>
                    </CardActions>
                    <CardMenu style={{color: '#fff'}}>
                     <IconButton name="share" />

@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addBlog } from '../../actions/addBlog'
+// import { addComment } from '../../actions/addBlog'
 
 
-    class BlogInput extends React.Component {
+    class CommentInput extends React.Component {
             state = {
-                title: '',
+                name: '',
                 content: ''
             }
     
@@ -22,18 +22,19 @@ import { addBlog } from '../../actions/addBlog'
             event.preventDefault()
             this.props.addBlog(this.state)
             this.setState({
-                title: '',
+                name: '',
                 content: '',
             })
+            alert("Comment subbmitted!")
             // console.log('after submit',event)...console mentiosn synthetic event was is that?
         }
         render () {
             return (
                 <div>
                     <form onSubmit={this.handleSubmit}>
-                        <label>add blog:</label>
-                        <input type="title" placeholder="title" name="title" onChange={this.handleChange} value={this.state.title}/>
-                        <input type="content" placeholder="content" name="content" onChange={this.handleChange} value={this.state.content}/>
+                        <label>add comment:</label>
+                        <input type="name" placeholder="YOUR NAME" name="name" onChange={this.handleChange} value={this.state.name}/>
+                        <input type="content" placeholder="CONTENT" name="content" onChange={this.handleChange} value={this.state.content}/>
                         <input type="submit" />
                     </form>
                    
@@ -45,4 +46,4 @@ import { addBlog } from '../../actions/addBlog'
 
 
 
-export default connect(null, { addBlog })(BlogInput)
+export default connect()(CommentInput)

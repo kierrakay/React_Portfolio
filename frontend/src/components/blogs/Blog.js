@@ -1,37 +1,47 @@
 import React from 'react'
-// import { Redirect } from 'react-router-dom'
-import { Grid, Cell, Card, CardTitle, CardActions, Button, CardMenu, CardText} from 'react-mdl'
-
+// import { Link } from 'react-router-dom'
+// import { Grid, Cell, Card, CardTitle, CardActions, CardMenu, CardText} from 'react-mdl'
+import CommentsContainer from '../../containers/CommentsContainer'
 
 
 //functional presentational component
 const Blog = (props) => {
 let blog = props.blogPosts[props.match.params.id - 1]
-
+ console.log(props)
     return (
-
-        <div className="blogs-grid" >
-        <Grid >
-        <Cell col={4}>
-        <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-        <CardTitle style={{color: 'black', height: '176px', background: '#'}}>  {blog ? blog.title : null}</CardTitle>
-           {/* <CardTitle style={{color: 'black', height: '176px', background: '#'}}>{props.blogPost.title}</CardTitle> */}
-                <CardText>
-                    {blog ? blog.content : null}
-                {/* { props.blogPost.content }  */}
-                </CardText>
-                <CardActions border>
-                <Button colored>Medium</Button>
-                </CardActions>
-                <CardMenu style={{color: '#fff'}}>
-    
-                </CardMenu>
-      </Card>
-      </Cell>
-      </Grid>
-
-
+        <div>
+             <h1>Title: {blog ? blog.title: null}</h1> - <h1>Content: {blog ? blog.content : null}</h1>
+   
+             <div>
+                 <CommentsContainer blog={blog}/>
+             </div>
         </div>
+
+        // <div className="blogs-grid" >
+        //     <Grid >
+        //     <Cell col={4}>
+        //     <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
+        //     <CardTitle style={{color: 'black', height: '176px', background: '#'}}>  {blog ? blog.title : null}</CardTitle>
+        //     {/* <CardTitle style={{color: 'black', height: '176px', background: '#'}}>{props.blogPost.title}</CardTitle> */}
+        //             <CardText>
+        //                 {blog ? blog.content : null} 
+        //             {/* { props.blogPost.content }  */}
+        //             </CardText>
+        //             <CardActions border>
+        //             {/* <Button colored>
+        //             <a href={blog ? blog.url : null}>Medium</a>
+        //             </Button> */}
+        //             </CardActions>
+        //             <CardMenu style={{color: '#fff'}}>
+        
+        //             </CardMenu>
+        //     </Card>
+        //     </Cell>
+        //     </Grid>
+        //     <div>
+        //         <CommentsContainer />
+        //     </div>
+        // </div>
      
     )
 }

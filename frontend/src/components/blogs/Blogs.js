@@ -22,9 +22,15 @@ const Blogs = (props) => {
     
                     </CardText>
                     <CardActions border>
-                    <Button colored>
+                    <Button colored >
                         <Link to={`/blogs/${blogPost.id}`}>Comment Here</Link>
                         </Button>
+                        <Button >
+                        <a href={blogPost.url}>Meduim</a>
+                        </Button>
+                        {/* <Button colored ripple>
+                        <Link to={blogPost.url}>Medium</Link>  
+                        </Button> */}
                     </CardActions>
                     <CardMenu style={{color: '#fff'}}>
         

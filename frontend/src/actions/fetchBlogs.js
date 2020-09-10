@@ -11,3 +11,4 @@ export function fetchBlogPosts() {
 
     }
 }
+//why is this payload blogs and not blogposts? where is this connecting?
