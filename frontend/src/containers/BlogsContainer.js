@@ -5,7 +5,7 @@ import BlogInput from '../components/blogs/BlogInput'
 import { fetchBlogPosts} from '../actions/fetchBlogs'
 // import { addBlog } from '../actions/addBlog'
 import Blogs from '../components/blogs/Blogs'
-// import Blog from '../components/blogs/Blog'
+import Blog from '../components/blogs/Blog'
 
 
 class BlogsContainer extends React.Component {
@@ -22,8 +22,8 @@ class BlogsContainer extends React.Component {
             <div>
                 <Switch>
                 <Route  path='/blogs/new' component={BlogInput} />
-                {/* <Route  path='/blogs/:id' render ={(routerProps)=><Blog {...routerProps} blogPost={this.props.blogPost} />} /> */}
-                <Route  path='/blogs' render={(routerProps)=><Blogs {...routerProps} blogPosts={this.props.blogPosts} />} />
+                <Route path='/blogs/:id' render ={(routerProps)=><Blog {...routerProps} blogPosts={this.props.blogPosts} />} />
+                <Route  exact path='/blogs' render={(routerProps)=><Blogs {...routerProps} blogPosts={this.props.blogPosts} />} />
                 </Switch>
             </div>
         )

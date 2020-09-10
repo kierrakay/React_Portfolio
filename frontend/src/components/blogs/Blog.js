@@ -5,10 +5,9 @@ import { Grid, Cell, Card, CardTitle, CardActions, Button, CardMenu, CardText} f
 
 
 
-
 //functional presentational component
 const Blog = (props) => {
-
+let blog = props.blogPosts[props.match.params.id - 1]
 
     return (
 
@@ -16,9 +15,11 @@ const Blog = (props) => {
         <Grid >
         <Cell col={4}>
         <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
-           <CardTitle style={{color: 'black', height: '176px', background: '#'}}>{props.blogPost.title}</CardTitle>
+        <CardTitle style={{color: 'black', height: '176px', background: '#'}}>  {blog ? blog.title : null}</CardTitle>
+           {/* <CardTitle style={{color: 'black', height: '176px', background: '#'}}>{props.blogPost.title}</CardTitle> */}
                 <CardText>
-                { props.blogPost.content } 
+                    {blog ? blog.content : null}
+                {/* { props.blogPost.content }  */}
                 </CardText>
                 <CardActions border>
                 <Button colored>Medium</Button>
@@ -29,13 +30,20 @@ const Blog = (props) => {
       </Card>
       </Cell>
       </Grid>
-       
+
+
         </div>
      
     )
 }
 
 export default Blog
+
+
+
+
+
+
 
 
 //class presentational component
