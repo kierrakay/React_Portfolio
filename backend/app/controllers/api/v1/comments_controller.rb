@@ -19,13 +19,6 @@ class Api::V1::CommentsController < ApplicationController
     
     end
 
-    # def create 
-    #     # binding.pry
-    #    comment = Comment.create(comment_params)
-    #     comment.save!
-    #     render json: comment
-    # end
-
     def show 
        
        @comment= Comment.find(params[:id])

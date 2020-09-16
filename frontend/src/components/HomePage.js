@@ -2,7 +2,7 @@ import React from 'react'
 import About from './About'
 import { Grid, Cell } from 'react-mdl'
  
-const HomePage = () =>{
+export const HomePage = () =>{
 
       return (
               // <div style={{width: '100%', margin: 'auto'}}>
@@ -10,9 +10,6 @@ const HomePage = () =>{
             <Grid className="landing-grid">
               <Cell col={12}>
               <div className="banner-text">
-                {/* <h1>Software Engineer</h1> */}
-  
-                {/* <hr/> */}
                 <About />
               </div>
               <div>
@@ -50,6 +47,6 @@ const HomePage = () =>{
 //   }
 // }
 
-export default HomePage
+
 
 

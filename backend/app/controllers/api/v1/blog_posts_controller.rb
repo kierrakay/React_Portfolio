@@ -20,8 +20,17 @@ class Api::V1::BlogPostsController < ApplicationController
     end
 
     def destroy 
-        blog_post = BlogPost.find_by(:id => params[:id]).destroy
-        render json: blog_post
+        # binding.pry
+        blog_post = BlogPost.find(params[:id])
+        # comment = Comment.find(blog_post.comments)
+        # blog_post = BlogPost.find(params["id"])
+        blog_post.destroy
+        render json: {}, status: 200
+        # render json: blog_post
+        # blog_post = BlogPost.find_by(:id => params[:id]).destroy
+        # render json: blog_post
+        # blog_post = BlogPost.find_by(:id => params[:blog_post_id]).destroy
+        # render json: blog_post
     end
 
     private

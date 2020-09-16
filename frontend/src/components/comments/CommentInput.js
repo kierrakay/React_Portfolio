@@ -2,8 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addComment } from '../../actions/addComment'
 
-
-
     class CommentInput extends React.Component {
             state = {
                 name: '',
@@ -20,6 +18,7 @@ import { addComment } from '../../actions/addComment'
         }
 
         handleSubmit = event => {
+            // debugger
             event.preventDefault()
             // this.props.addComment(this.state, blogPost)
             this.props.addComment(this.state, this.props.blogPost.id)
@@ -27,7 +26,6 @@ import { addComment } from '../../actions/addComment'
                 name: '',
                 content: '',
             })
-            alert("Comment submitted!")
             // console.log('after submit',event)...console mentiosn synthetic event was is that?
         }
         render () {
@@ -46,9 +44,9 @@ import { addComment } from '../../actions/addComment'
     }
 
 
-
-
-export default connect(null, {addComment})(CommentInput)
+    export default connect(null, {addComment})(CommentInput)
+// export default connect(null, {addComment})(CommentInput)
 
 
 //name and value in form make it a controlled form using local state
+//handleSubmit is asychrounous meaning it wont clear form out till everything is run

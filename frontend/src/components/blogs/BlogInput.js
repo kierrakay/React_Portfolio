@@ -2,14 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addBlog } from '../../actions/addBlog'
 
-
     class BlogInput extends React.Component {
-            state = {
-                title: '',
-                content: '',
-                url: ''
-            }
-    
+        state = {
+            title: '',
+            content: '',
+            url: ''
+        }
 
         handleChange = event => {
             this.setState({
@@ -39,15 +37,9 @@ import { addBlog } from '../../actions/addBlog'
                         <input type="content" placeholder="CONTENT" name="content" onChange={this.handleChange} value={this.state.content}/>
                         <input type="url" placeholder="url" name="url" onChange={this.handleChange} value={this.state.url}/>
                         <input type="submit" />
-                    </form>
-                   
+                    </form>                
                 </div>
             )
         }
     }
-
-
-
-    // export default connect()(BlogInput)
-
 export default connect(null, { addBlog })(BlogInput)

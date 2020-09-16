@@ -11,8 +11,7 @@ export const addBlog = (data) => {
             body: JSON.stringify(data)
         })
         .then(res => res.json())
-        .then(blogPost => dispatch({type: 'ADD_BLOG', payload: blogPost}))
-        
+        .then(blogPost => dispatch({type: 'ADD_BLOG', payload: blogPost})) 
     }
 
 }

@@ -3,27 +3,28 @@ import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import BlogInput from '../components/blogs/BlogInput'
 import { fetchBlogPosts} from '../actions/fetchBlogs'
-// import { addBlog } from '../actions/addBlog'
-import Blogs from '../components/blogs/Blogs'
 import Blog from '../components/blogs/Blog'
+import Blogs from '../components/blogs/Blogs'
 
 
-class BlogsContainer extends React.Component {
+class BlogsContainer extends React.PureComponent {
 
+    // ComponentDidMount will only fire on the initialization of the component.
+    //  All updates are fired through ComponentDidUpdate. Use that interface for
+    //   anything that is going to happen when the state is updated.
     componentDidMount() {
+
       this.props.fetchBlogPosts()
-
+console.log('blogscontainerCDM', this.props)
     }
-
-
     render() {
         
         return (
             <div>
                 <Switch>
                 <Route path='/blogs/new' component={BlogInput} />
-                <Route path='/blogs/:id' render ={(routerProps)=><Blog {...routerProps} blogPosts={this.props.blogPosts} />} />
-                <Route path='/blogs' render={(routerProps)=><Blogs {...routerProps} blogPosts={this.props.blogPosts} />} />
+                <Route path='/blogs/:id' render={(routerProps) => <Blog {...routerProps} blogPosts={this.props.blogPosts} />} />
+                <Route path='/blogs' render={(routerProps) => <Blogs {...routerProps} blogPosts={this.props.blogPosts} />} />
                 </Switch>
             </div>
         )
@@ -31,11 +32,11 @@ class BlogsContainer extends React.Component {
 }
 
 
-const mapStateToProps = state => {
-    return {
-        blogPosts: state.blogPosts
+    const mapStateToProps = state => {      
+        return {
+            blogPosts: state.blogPosts
+        }
     }
-}
 
 export default connect(mapStateToProps, {fetchBlogPosts})(BlogsContainer)
 

@@ -5,20 +5,41 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 
 //functional presentational component
-const Blog = (props) => {
-    //this is preferable just incase your backend id doesnt match the array idx (redux). in the case that you delete blogs.
-let blogPost = props.blogPosts[props.match.params.id - 1]
+    const Blog = (props) => {
+    // let blogPost = props.blogPosts[props.match.params.id - 1]
+    let blogPost = props.blogPosts.filter(blogPost => blogPost.id == props.match.params.id)[0]
+    console.log('bp',blogPost)
+        return (
+            <div>
+                <h1>Title: {blogPost ? blogPost.title: null}</h1> <h1>Content: {blogPost ? blogPost.content : null}</h1>
+                <div>
+                {/* <CommentsContainer /> */}
+                    <CommentsContainer blogPost={blogPost}/>
+                </div>
+            </div>
+        )
+    }
 
-// console.log(blog)
+    export default Blog
 
-    return (
-        <div>
-             <h1>Title: {blogPost ? blogPost.title: null}</h1> <h1>Content: {blogPost ? blogPost.content : null}</h1>
-   
-             <div>
-                 <CommentsContainer blogPost={blogPost}/>
-             </div>
-        </div>
+
+//line 9 is finding a specific blog
+//this component renders 1 specific blog
+//this component renders the comments container for every show page of a specifc blog
+//so we send comments containers an entire blog which has props
+//comments container has nothing to do with route we are just sedning blog down to comments container that is already
+//associated with page we are on
+
+
+
+
+
+
+
+
+
+
+
 
         // <div className="blogs-grid" >
         //     <Grid >
@@ -46,10 +67,8 @@ let blogPost = props.blogPosts[props.match.params.id - 1]
         //     </div>
         // </div>
      
-    )
-}
 
-export default Blog
+
 
 
 

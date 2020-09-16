@@ -6,9 +6,8 @@ export function fetchBlogPosts() {
           .then(blogs => dispatch ({
               type: 'FETCH_BLOGS',
               payload: blogs
-
           }))
-
+          
     }
 }
 //why is this payload blogs and not blogposts? where is this connecting?

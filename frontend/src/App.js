@@ -1,31 +1,19 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
 import { Layout, Drawer, Navigation, Content} from 'react-mdl'
 import NavBar from './components/Main'
 import { Link } from 'react-router-dom'
 import SocialLinks from './components/SocialLinks'
-// import { render } from 'react-dom';
 
-// import BlogsContainer from './containers/BlogsContainer'
-// import Contact from './components/Contact'
-// import NavBar from './components/Main'
-// import Projects from './components/Projects'
-// import Resume from './components/Resume'
-// import HomePage from './components/HomePage'
-// import Intro from './components/Intro'
-// import About from './components/About'
-// import Timeline from './components/Timeline';
-
-
-
+// import { fetchBlogPosts} from './actions/fetchBlogs'
+// import {connect} from 'react-redux'
 
 class App extends React.Component {
+  // class App extends React.Component {
 
-  // componentDidMount(){
-  //   fetch('http://localhost:3000/api/v1/blog_posts')
-  //   .then(resp => resp.json())
-  //   .then(data => console.log(data))
-  // }
+// componentDidMount() {
+//   this.props.fetchBlogPosts()
+//   console.log(this.props)
+// }
 
   render() {
   return (
@@ -44,13 +32,21 @@ class App extends React.Component {
            <SocialLinks />
         </Drawer>
         <Content className="navigation-color">
-          <NavBar />
+        <NavBar />
+          {/* <NavBar blogPosts={this.props.blogPosts}/> */}
           </Content>
     </Layout>
 </div>
   );
 }
 }
+// const mapStateToProps = state => {      
+//   return {
+//       blogPosts: state.blogPosts
+//   }
+// }
+
+
 
 
 
@@ -85,3 +81,4 @@ class App extends React.Component {
 // }
 
 export default App;
+// export default connect(mapStateToProps,{fetchBlogPosts})(App)
