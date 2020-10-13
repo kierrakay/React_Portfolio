@@ -38,10 +38,6 @@ export const addBlog = data => {
 
   return dispatch => {
     fetch('http://localhost:5000/api/v1/blog_posts', {
-      headers: {
-        'content-type': 'multipart/form-data',
-        accept: 'application/json'
-      },
       method: 'POST',
       body: formData
     })

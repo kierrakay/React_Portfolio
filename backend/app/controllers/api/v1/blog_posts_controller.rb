@@ -8,10 +8,10 @@ class Api::V1::BlogPostsController < ApplicationController
 
     def create 
        binding.pry
-        blog_post = BlogPost.create(blog_post_params)
-        blog_post.save!
+        # blog_post = BlogPost.create(blog_post_params)
+        # blog_post.save!
         # render json: blog_post
-        render json: blog_post, notice: 'Blog was successfully created.'
+        # render json: blog_post, notice: 'Blog was successfully created.'
     end
 
     def show 
