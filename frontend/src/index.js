@@ -11,18 +11,15 @@ import thunk from 'redux-thunk';
 import blogReducer from './reducers/manageBlog'
 import App from './App';
 
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-const store = createStore(blogReducer, composeEnhancers(applyMiddleware(thunk)))
-// const store = createStore(blogReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
+let store = createStore(blogReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <Provider store={store}>
   <Router>
- 
-  {/* <React.StrictMode> */}
   <App />
-  {/* </React.StrictMode> */}
   </Router>
   </Provider>
 ,

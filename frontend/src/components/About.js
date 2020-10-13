@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button'
 
 const About = () => {
   return (
@@ -7,6 +8,7 @@ const About = () => {
             <h5> Who Am I?</h5>
                 <h3> shgciysgc shgdciah dhdaydchb.</h3>
         <div>
+            <Button />
             <h1>Skills Section</h1>
                 <h5> Here are some of my expertise?</h5>
                     <li>js</li>

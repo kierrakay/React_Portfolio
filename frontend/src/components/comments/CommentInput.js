@@ -8,26 +8,22 @@ import { addComment } from '../../actions/addComment'
                 content: ''
             }
     
-
         handleChange = event => {
             this.setState({
                 [event.target.name]: event.target.value
-                // title: event.target.value,
-                // content: event.target.value,
             })
         }
 
         handleSubmit = event => {
             // debugger
             event.preventDefault()
-            // this.props.addComment(this.state, blogPost)
             this.props.addComment(this.state, this.props.blogPost.id)
             this.setState({
                 name: '',
                 content: '',
             })
-            // console.log('after submit',event)...console mentiosn synthetic event was is that?
         }
+
         render () {
             return (
                 <div>
@@ -43,9 +39,8 @@ import { addComment } from '../../actions/addComment'
         }
     }
 
-
     export default connect(null, {addComment})(CommentInput)
-// export default connect(null, {addComment})(CommentInput)
+
 
 
 //name and value in form make it a controlled form using local state

@@ -3,7 +3,6 @@ import React from 'react'
 const SocialLinks = () => (
 
     <div className="social-links">
-
     {/* LinkedIn */}
       <a href="https://www.linkedin.com/in/kierra-merriman-0633971a9/" target="_blank" rel="noopener noreferrer">
       <i className="fa fa-linkedin-square" aria-hidden="true"/>

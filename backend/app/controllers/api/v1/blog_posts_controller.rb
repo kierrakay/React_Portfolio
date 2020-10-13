@@ -3,19 +3,21 @@ class Api::V1::BlogPostsController < ApplicationController
     def index
         blog_posts = BlogPost.all 
         render json: blog_posts
+        # render json: blog_posts.with_attached_image
     end
 
     def create 
-        # binding.pry
+    #    binding.pry
         blog_post = BlogPost.create(blog_post_params)
         blog_post.save!
-        render json: blog_post
-        # render json: blog_post, notice: 'Blog was successfully created.'
+        # render json: blog_post
+        render json: blog_post, notice: 'Blog was successfully created.'
     end
 
     def show 
        
         blog_post = BlogPost.find(params[:id])
+        image = rails_blob_path(blog_post.image)
         render json: blog_post
     end
 
@@ -36,6 +38,8 @@ class Api::V1::BlogPostsController < ApplicationController
     private
 
     def blog_post_params
-        params.require(:blog_post).permit(:title, :content, :url)
+        params.require(:blog_post).permit(:title, :content, :link, :image)
+        
+      
     end
 end

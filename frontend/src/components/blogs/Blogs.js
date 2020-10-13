@@ -9,34 +9,34 @@ const Blogs = (props) => {
     
     const handleDelete = (blogPost) => {
     //   debugger
-      props.deleteBlog(blogPost.id)
+      props.deleteBlog(blogPost.id).then(resp => window.location.reload())
     }
+    //.then makes this async
         return (
     
             <div className="blogs-grid" >
-                    {props.blogPosts.map(blogPost =>
+                     {props.blogPosts.map(blogPost => 
+
                 <Grid key={blogPost.id}>
                 <Cell col={12}>
                 <Card shadow={5} style={{minWidth: '450', margin: 'auto'}} >
-                    <CardTitle style={{color: 'black', height: '176px', background: '#'}}>  {blogPost.title} </CardTitle>
+                <CardTitle style={{color: 'black', height: '156px', background: '#'}}>   </CardTitle>
+                    <CardTitle style={{color: 'black', height: '156px', background: '#'}}>  {blogPost.title} </CardTitle>
                         <CardText>
-                            {blogPost.content}
-        
+                            {/* {blogPost.content} */}
+                            {/* {blogPost.image.name} */}
                         </CardText>
                     <CardActions border>
-                        {/* <Button component={ Link } to={`/blogs/${blogPost.id}`} colored ripple>
-                            Comment Here
-                        </Button> */}
                         <Link to={`/blogs/${blogPost.id}`}>Comment Here</Link>
                         <Button> 
-                            <a href={blogPost.url}>Medium</a>
+                            <a href={blogPost.link}>Medium</a>
                         </Button>
                         <Button onClick={()=> handleDelete(blogPost)}>
                             X
                         </Button>
                     </CardActions>
-                    <CardMenu style={{color: '#fff'}}>
-                    </CardMenu>
+                        <CardMenu style={{color: '#fff'}}>
+                        </CardMenu>
                 </Card>
                 </Cell>
                 </Grid>)}
@@ -46,7 +46,7 @@ const Blogs = (props) => {
     }
 
     export default connect(null, {deleteBlog})(Blogs)
-    // export default Blogs
+
 
     
 

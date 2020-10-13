@@ -1,27 +1,39 @@
 import React from 'react'
+// import { connect } from 'react-redux'
+// import {upvoteBlog} from '../../actions/upvoteBlog'
 // import { Link } from 'react-router-dom'
 // import { Grid, Cell, Card, CardTitle, CardActions, CardMenu, CardText} from 'react-mdl'
 import CommentsContainer from '../../containers/CommentsContainer'
 
 
-//functional presentational component
-    const Blog = (props) => {
-    // let blogPost = props.blogPosts[props.match.params.id - 1]
-    let blogPost = props.blogPosts.filter(blogPost => blogPost.id == props.match.params.id)[0]
-    console.log('bp',blogPost)
+const Blog = (props) => {
+
+        let blogPost = props.blogPosts.filter(blogPost => blogPost.id == props.match.params.id)[0]
         return (
             <div>
-                <h1>Title: {blogPost ? blogPost.title: null}</h1> <h1>Content: {blogPost ? blogPost.content : null}</h1>
+                <h1>Title: {blogPost ? blogPost.title: null}</h1><br/>
+                 <h1>Content: {blogPost ? blogPost.content : null}</h1>
                 <div>
-                {/* <CommentsContainer /> */}
                     <CommentsContainer blogPost={blogPost}/>
                 </div>
             </div>
         )
     }
-
     export default Blog
 
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 //line 9 is finding a specific blog
 //this component renders 1 specific blog
@@ -29,11 +41,35 @@ import CommentsContainer from '../../containers/CommentsContainer'
 //so we send comments containers an entire blog which has props
 //comments container has nothing to do with route we are just sedning blog down to comments container that is already
 //associated with page we are on
+ // let blogPost = props.blogPosts[props.match.params.id - 1] only use when using redux idx
 
 
 
 
+//functional presentational component
+//blogPost is creating a new array with just this blog in it [0] is to access it
+//have to use terenary because the first time it renders it doesnt have the accounts so its undefined. 
 
+
+// class Blog extends React.Component {
+
+
+//     render () {
+//         let blogPost = this.props.blogPosts.filter(blogPost => blogPost.id == this.props.match.params.id)[0]
+//         return (
+//             <div>
+//                 <h1>Title: {blogPost ? blogPost.title: null}</h1><br/>
+//                  <h1>Content: {blogPost ? blogPost.content : null}</h1>
+      
+
+//                 <div>
+//                     <CommentsContainer blogPost={blogPost}/>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+//     export default Blog
 
 
 

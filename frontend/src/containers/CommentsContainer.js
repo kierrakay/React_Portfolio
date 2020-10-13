@@ -5,7 +5,6 @@ import Comments from '../components/comments/Comments'
 class CommentsContainer extends React.Component {
     // myFunc() {
     //     return this.props.blogPost && this.props.blogPost.comments
-    //     // return this.props.blogPost.comments
     // }
     render () {
         return (

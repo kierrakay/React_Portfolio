@@ -1,17 +1,13 @@
 
 import React from 'react'
-// import Comment from './Comment'
+import Comment from './Comment'
+
 const Comments = (props) => {
-//   debugger shows props undefined the defined
-//in react and redux on refresh your store clears out
-//which means the first time it renders we will get undefined props
-//if not going through link directly
-console.log('comments component',props.comments)
+//debugger
     return (
         <div>
             {props.comments && props.comments.map(comment =>
-       
-                <h3 key={comment.id}>{comment.name}-{comment.content}</h3>
+                <Comment key={comment.id} comment={comment} />
             )}
         </div>
     )
@@ -31,7 +27,11 @@ export default Comments
 
 
 
-
+//   debugger shows props undefined then defined on 2nd render. doesnt happen if you go through links tho. we immediately see props come through.if you refresh on that page react and redux clear that store out.
+//only reason why it renders twice is because of componentdidmount in blogs container remounting those blogs
+//in react and redux on refresh your store clears out
+//which means the first time it renders we will get undefined props
+//we use ampersand because we want to check first and if it returns true it'll run right side of && if it returns false it wont run that
 
 
 

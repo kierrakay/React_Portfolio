@@ -1,38 +1,21 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import BlogsContainer from '../containers/BlogsContainer'
 import Contact from './Contact'
-import {HomePage} from './HomePage'
+import HomePage from './HomePage'
 import Projects from './Projects'
 import BlogInput from '../components/blogs/BlogInput'
-import {connect} from 'react-redux'
+import BlogsContainer from '../containers/BlogsContainer'
 
-
-
-
-// const NavBar = () => (
-
-//     <Switch>
-//         <Route  exact path="/" component={HomePage} />
-//         <Route  path="/blogs" component={BlogsContainer} />
-//         <Route  path='/blogs/new' component={BlogInput} />
-//         <Route  path="/contact" component={Contact} />
-//         <Route  path="/projects" component={Projects} />
-//     </Switch>
-// )
 
 class NavBar extends React.PureComponent {
-    componentDidMount(){
-        // console.log(this.props)
-    }
-    
+
     render(){
         return (    
         <div>   
         <Switch>
             <Route  exact path="/" component={HomePage} />
             <Route  path="/blogs" component={BlogsContainer} />
-            <Route  path='/blogs/new' component={BlogInput} />
+            <Route  path='/blogs/new' component={BlogInput} /> 
             <Route  path="/contact" component={Contact} />
             <Route  path="/projects" component={Projects} />
         </Switch>
@@ -42,17 +25,9 @@ class NavBar extends React.PureComponent {
 
 }
 
-const mapStateToProps = state => {      
-    return {
-        blogPosts: state.blogPosts
-    }
-}
 
+export default NavBar
 
-
-
-// export default NavBar
-export default connect(mapStateToProps)(NavBar)
 
 
 
