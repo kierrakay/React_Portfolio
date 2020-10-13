@@ -7,7 +7,7 @@ class Api::V1::BlogPostsController < ApplicationController
     end
 
     def create 
-    #    binding.pry
+       binding.pry
         blog_post = BlogPost.create(blog_post_params)
         blog_post.save!
         # render json: blog_post
