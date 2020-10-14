@@ -15,9 +15,10 @@ class App extends React.Component {
           {/* <div className="drawer-title-email">maddison@email.com1</div> */}
               <Navigation >
                   <Link  to="/" style={{color: '#fff', fontSize: '25px'}}>Home</Link>
-                  <Link to="/blogs" style={{color: '#fff', fontSize: '25px'}}>Blogs</Link>
-                  <Link to="/blogs/new" style={{color: '#fff'}}>Create A New Blog</Link>
+                  {/* <Link to="/blogs" style={{color: '#fff', fontSize: '25px'}}>Blogs</Link>
+                  <Link to="/blogs/new" style={{color: '#fff'}}>Create A New Blog</Link> */}
                   {/* <Link to="/contact" style={{color: '#fff'}}>Contact</Link> */}
+                  <Link to="/blogs" style={{color: '#fff', fontSize: '25px'}}>Blogs</Link>
                   <Link to="/projects" style={{color: '#fff', fontSize: '25px'}}>Projects</Link>
                   <a href ="https://docs.google.com/document/d/1wmQEW-1EaF3P2pk18j9bPb-ipsfVVdsrvRINd2J66z4/edit?usp=sharing" style={{color: '#fff', fontSize: '25px'}}>Resume</a>
                   <br/>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addBlog } from '../../actions/addBlog'
-// import Dropzone from 'react-dropzone'
+
 
     class BlogInput extends React.Component {
         state = {
@@ -20,15 +20,12 @@ import { addBlog } from '../../actions/addBlog'
                 // content: event.target.value,
             })
         }
-          onImageChange = event => { 
-            this.setState({ image: event.target.files[0]});
-          };
 
      
           handleSubmit = event => {
             event.preventDefault()
             this.props.addBlog(this.state)
-            console.log('state',this.state)
+            // console.log('state',this.state)
             alert("Blog Submitted!")
             this.setState({
                 title: '',
@@ -37,12 +34,10 @@ import { addBlog } from '../../actions/addBlog'
                 image: null
         
             })
-            console.log('after submit',event)
+            // console.log('after submit',event)
         }
-
-    
        
-     
+       
         render () {
             return (
                 <div>
@@ -51,9 +46,19 @@ import { addBlog } from '../../actions/addBlog'
                         <input type="title" placeholder="TITLE" name="title" onChange={this.handleChange} value={this.state.title}/>
                         <input type="content" placeholder="CONTENT" name="content" onChange={this.handleChange} value={this.state.content}/>
                         <input type="link" placeholder="LINK" name="link" onChange={this.handleChange} value={this.state.link}/>
-                        <input type="file" name='image' />
+                        {/* <input type="file"
+                            id="blog-photo-input" name="image"
+                            // accept="image/png, image/jpeg"
+                            accept="image/*"
+                        /> */}
+                        <input
+                            className="submit-input"
+                            type="submit"
+                            // value="Upload"
+                        />
+                        {/* <input type="file" name='image' /> */}
                         {/* <input type="file"  accept="image/*" multiple={false} onChange={this.onImageChange} /> */}
-                        <input type="submit" />
+                        {/* <input type="submit" /> */}
                     </form>                
                 </div>
             )
@@ -62,81 +67,35 @@ import { addBlog } from '../../actions/addBlog'
 export default connect(null, { addBlog })(BlogInput)
 
 
+//for image upload
+        //   onImageChange = event => { 
+        //     this.setState({ image: event.target.files[0]});
+        //     console.log('check', this.state.image)
+        //   };
 
 
-
-   //   handleSubmit = event => {
+//for aws
+        // handleSubmit = (event) => {
         //     event.preventDefault();
-        //     const formData = new FormData();
-        //     formData.append('title', this.state.title);
-        //     formData.append('content', this.state.content);
-        //     formData.append('link', this.state.link);
-        //     formData.append('image', this.state.image);
-        //     fetch('http://localhost:3000/api/v1/blog_posts', {
-        //       method: 'POST',
-        //       body: formData
-        //     })
-        //     .catch(error=>console.log(error));
+        //     let blogInput = document.getElementById('blog-photo-input');
+        //     if (blogInput.files[0]) {
+        //       const formData = new FormData();
+        //       const upload_file = blogInput.files[0]
+        //       formData.append('blog_picture', upload_file);
+        //       this.props.addBlog(formData)
+        //       console.log('check', formData)
+        //     }
+            
+        //   }
 
-        // }
-
-
-            // handleSubmit = event => {
-        //     event.preventDefault();
-        //     const formData = new FormData();
-        //     formData.append('title', this.state.title);
-        //     formData.append('content', this.state.content);
-        //     formData.append('link', this.state.link);
-        //     formData.append('image', this.state.image);
-        //     // this.props.addBlog(formData)
-        //     console.log(formData)
-        //     fetch('http://localhost:3000/api/v1/blog_posts', {
-        //         headers: { 'content-type': 'multipart/form-data' },
-        //       method: 'POST',
-        //       body: formData
-        //     })
-        //     .catch(error=>console.log(error));
-        // }
-
-
-
-
-            // handleSubmit = event => {
-            //     event.preventDefault()
-           
-            //     const blogPost = new FormData();
-            //     blogPost.append('blogPost[title]', this.state.title)
-            //     blogPost.append('blogPost[content]', this.state.content)
-            //     blogPost.append('blogPost[url]', this.state.url)
-            //     blogPost.append('blogPost[image]', this.state.image)
-            // //    console.log('state', blogPost)
-            //     this.props.addBlog(blogPost)
-            //     alert("Blog Submitted!")
-            //         this.setState({
-            //             title: '',
-            //             content: '',
-            //             link: '',
-            //             image: null
-                
-            //         })
-            // }
-      
-
-        //   handleSubmit = event => {
+           // handleSubmit = event => {
         //     event.preventDefault()
-        //     const formData = new FormData()
-        //     formData.append('title', this.state.title)
-        //     formData.append('content', this.state.content)
-        //     formData.append('url', this.state.url)
-        //     formData.append('image', this.state.iamge)
-        //     this.props.addBlog(this.formData)
-        //     console.log(formData)
-        //     alert("Blog Submitted!")
-            // this.setState({
-            //     title: '',
-            //     content: '',
-            //     url: '',
-            //     image: null
-            // })
-            // console.log('after submit',event)
-        // }
+        //     const formData = new FormData(event.target)
+        //  // to see formdata. console log doesnt work
+        //     // for (var pair of formData.entries()) {
+        //     //     console.log(pair[0]+ ' - ' + pair[1]); 
+        //     // }
+        //    this.props.addBlog(formData)
+        //       .then(data => this.props.setPost(data.blog_post))
+        //       .catch(console.error);
+        //   }

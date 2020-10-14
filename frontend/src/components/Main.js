@@ -1,10 +1,11 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Contact from './Contact'
+// import Contact from './Contact'
 import HomePage from './HomePage'
 import Projects from './Projects'
-import BlogInput from '../components/blogs/BlogInput'
-import BlogsContainer from '../containers/BlogsContainer'
+import ProjectBlogs from './ProjectBlogs'
+// import BlogInput from '../components/blogs/BlogInput'
+// import BlogsContainer from '../containers/BlogsContainer'
 
 
 class NavBar extends React.PureComponent {
@@ -14,9 +15,10 @@ class NavBar extends React.PureComponent {
         <div>   
         <Switch>
             <Route  exact path="/" component={HomePage} />
-            <Route  path="/blogs" component={BlogsContainer} />
-            <Route  path='/blogs/new' component={BlogInput} /> 
-            <Route  path="/contact" component={Contact} />
+            {/* <Route  path="/blogs" component={BlogsContainer} />
+            <Route  path='/blogs/new' component={BlogInput} />  */}
+            {/* <Route  path="/contact" component={Contact} /> */}
+            <Route  path="/blogs" component={ProjectBlogs} />
             <Route  path="/projects" component={Projects} />
         </Switch>
         </div>

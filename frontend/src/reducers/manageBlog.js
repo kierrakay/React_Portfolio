@@ -9,7 +9,7 @@ export default function blogReducer(state = {
                 return {blogPosts: action.payload}
                 //this is our new state..it replaces with empty with payload
             case 'ADD_BLOG':
-                debugger
+            //     debugger
                 return {...state, blogPosts: [...state.blogPosts, action.payload]}
             case 'ADD_COMMENT':
                 let blogPosts = state.blogPosts.map(blogPost => {
